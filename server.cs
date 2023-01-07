@@ -12,7 +12,9 @@ namespace Tictactoe
     {
         public static Socket StartServer()
         {
-            IPHostEntry host = Dns.GetHostEntry("localhost");
+            Console.Write("Host Server Ip:");
+            string ipAdress = Console.ReadLine();
+            IPHostEntry host = Dns.GetHostEntry(IPAddress.Parse(ipAdress));
             IPAddress iPAddress = host.AddressList[0];
             IPEndPoint endPoint = new IPEndPoint(iPAddress, 5000);
             try

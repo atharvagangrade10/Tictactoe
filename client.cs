@@ -10,12 +10,14 @@ namespace client
 {
     public class client
     {
-        public static Socket StartClient(string ipAddress)
+        public static Socket StartClient()
         {
+            Console.Write("Server Ip:");
+            string ipAdress = Console.ReadLine();
             byte[] bytes = new byte[1024];
             try
             {
-                IPHostEntry host = Dns.GetHostEntry(ipAddress);
+                IPHostEntry host = Dns.GetHostEntry(IPAddress.Parse(ipAdress));
                 IPAddress address = host.AddressList[0];
                 IPEndPoint endPoint = new IPEndPoint(address, 5000);
 

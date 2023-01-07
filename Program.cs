@@ -78,9 +78,7 @@ namespace TIC_TAC_TOE
         }
         public static void ClientPlay()
         {
-            Console.Write("Server Ip:");
-            string ipAdress = Console.ReadLine();
-            Socket clientSocket = client.StartClient(ipAdress);
+            Socket clientSocket = client.StartClient();
             bool play = true;
             do
             {
