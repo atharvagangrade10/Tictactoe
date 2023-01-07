@@ -10,12 +10,12 @@ namespace client
 {
     public class client
     {
-        public static Socket StartClient()
+        public static Socket StartClient(string ipAddress)
         {
             byte[] bytes = new byte[1024];
             try
             {
-                IPHostEntry host = Dns.GetHostEntry("localhost");
+                IPHostEntry host = Dns.GetHostEntry(ipAddress);
                 IPAddress address = host.AddressList[0];
                 IPEndPoint endPoint = new IPEndPoint(address, 5000);
 
